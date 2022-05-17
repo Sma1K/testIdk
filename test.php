@@ -1,5 +1,5 @@
 <?php
-
+echo "<pre>";
 function genArr()
 {
     $cnt = 10001;
@@ -54,34 +54,18 @@ function task2()
     for ($i = 0; $i < count($arr["key1"]); $i++) {
         $test = [];
         foreach($arr as $key => $val) {
-            $tmp = array($key => $val[$i]);
-            array_push($test, $tmp);
+            $tmp = array($key => $arr[$key][$i]);
+            $test[$key] = $tmp[$key];
         }
-        array_push($glob, $test);
+        $glob[] = $test;
     }
-    var_dump($glob);
+    echo json_encode($glob);
 }
 
-function getVal($val, $cnt)
-{
-    return $val[$cnt];
-}
 
 
 
 //var_dump(task1a(genArr()));
 //var_dump(task1b(genArr()));
-//task2();
+task2();
 
-
-/*
-    task3
-*/
-
-
-/*
-SELECT users.email, COUNT(*)
-FROM users
-GROUP BY users.email
-HAVING COUNT(*) > 1;
-*/
