@@ -39,6 +39,22 @@ function task1b($arr)
     return false;
 }
 
+function task1c($arr)
+{
+    $tmpArr = array();
+    //$biggestInt = 9223372036854775807;
+    if ($arr) {
+        var_dump($arr);
+        echo "<hr>";
+        for($i = 0; $i < count($arr); $i++) {
+            array_push($tmpArr, (int)$arr[$i]);
+        }
+        return $tmpArr;
+    }
+
+    return false;
+}
+
 /*
 2. Дан массив $arr состоящий из таких элементов ["key1": [5,7,3,5], "key2": ["gdf1", "fgdf2", "gdf3", "fgdf4"], "key3": [[1,2], [3,4], [5,6], [7,8]] ...]
 Ключи key1, key2, .. всегда разные, но имеют одинаковую длину.
@@ -67,5 +83,6 @@ function task2()
 
 //var_dump(task1a(genArr()));
 //var_dump(task1b(genArr()));
-task2();
+var_dump(task1c(genArr()));
+//task2();
 
